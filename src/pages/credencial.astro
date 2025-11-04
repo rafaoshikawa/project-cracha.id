@@ -1,0 +1,170 @@
+---
+import HeadBase from '../components/HeadBase.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Produtos from '../components/Produtos.astro';
+
+import '../styles/global.css';
+import '../styles/header.css';
+import '../styles/footer.css';
+import '../styles/products.css';
+import '../styles/store.css';
+
+const credencialCategorias = [
+  {
+    id: "pvc",
+    cor: "#f97415ff",
+    nomeCategoria: "Credencial em PVC para Show",
+    descricao: "Credenciais em PVC duráveis e resistentes, ideais para shows, eventos musicais e festivais. Permitem fácil identificação do público e staff.",
+    beneficios: [
+      "Alta durabilidade e resistência",
+      "Perfeitas para shows e eventos de grande porte",
+      "Fáceis de personalizar com logos e cores",
+      "Controle de acesso rápido e seguro"
+    ],
+    produtos: [
+      { titulo: "Credencial VIP Acess", imagem: "/images/credencial-pvc/credencial1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial de Artistas Famosos", imagem: "/images/credencial-pvc/credencial2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial MTV2018", imagem: "/images/credencial-pvc/credencial3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial Clinca Médica", imagem: "/images/credencial-pvc/pvc4.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" }
+    ]
+  },
+  {
+    id: "transparente",
+    cor: "#f97415ff",
+    nomeCategoria: "Credencial Transparente",
+    descricao: "Credenciais totalmente transparentes em PVC, finas e modernas, ideais para conferências, feiras, shows e eventos corporativos, permitindo visibilidade total do conteúdo interno e fácil personalização.",
+    beneficios: [
+      "Transparência completa para destacar informações internas",
+      "Design moderno e minimalista",
+      "Perfeitas para eventos corporativos, feiras e shows",
+      "Fáceis de personalizar com logos, nomes e cargos",
+      "Permitem rápida identificação e controle de acesso"
+    ],
+    produtos: [
+      { titulo: "Uma Pilha de Crachás em branco", imagem: "/images/credencial-especial/transparente.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco Pendurado por um Cordão", imagem: "/images/credencial-especial/transparente2.png", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/credencial-especial/transparente3.png", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco Pendurado por um Cordão", imagem: "/images/credencial-especial/transparente4.png", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+    ]
+  },
+    {
+    id: "holografica",
+    cor: "#f97415ff",
+    nomeCategoria: "Credencial Holográfica",
+    descricao: "Credenciais em PVC holográfico, modernas e sofisticadas, ideais para conferências, feiras, shows e eventos corporativos premium, destacando cores iridescentes e mantendo visibilidade das informações internas.",
+    beneficios: [
+      "Efeito holográfico elegante e chamativo",
+      "Perfeitas para eventos corporativos, feiras e shows de destaque",
+      "Destaque visual para identificação rápida e controle de acesso",
+      "Fáceis de personalizar com logos, nomes e cargos",
+      "Visual premium para eventos exclusivos e memoráveis"
+    ],
+    produtos: [
+      { titulo: "Credencial de Show com Película Holográfica", imagem: "/images/credencial-especial/holografica.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial em Branco com Película Holográfica", imagem: "/images/credencial-especial/holografica-3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial do Coachella com Película Holográfica", imagem: "/images/credencial-especial/holografica-4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial em Branco com Película Holográfica", imagem: "/images/credencial-especial/holografica-2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+    ]
+  },
+    {
+    id: "pvc-corporativo",
+    cor: "#f97415ff",
+    nomeCategoria: "Credencial PVC Corporativo",
+    descricao: "Credenciais corporativas em PVC resistentes, ideais para uso interno de empresas, identificação de funcionários e visitantes em escritórios e fábricas.",
+    beneficios: [
+      "Controle interno de acesso rápido",
+      "Durável e resistente ao uso diário",
+      "Personalizável com logos e cores da empresa",
+      "Design profissional para ambientes corporativos"
+    ],
+    produtos: [
+      { titulo: "Credencial Corporativo de um Funcionário", imagem: "/images/corporativo/corporativo1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial Corporativo de um Funcionário", imagem: "/images/corporativo/corporativo4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial Corporativo de um Funcionário", imagem: "/images/corporativo/corporativo3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial Corporativo de um Funcionário", imagem: "/images/corporativo/corporativo2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+    ]
+  },
+  //     {
+  //   id: "papel-220g",
+  //   cor: "#f97415ff",
+  //   nomeCategoria: "Credencial em Papel 220g",
+  //   descricao: "Credenciais leves e econômicas em papel 220g, perfeitas para eventos temporários, workshops e conferências, permitindo identificação rápida e prática.",
+  //   beneficios: [
+  //     "Econômicas e práticas",
+  //     "Indicadas para eventos temporários",
+  //     "Fáceis de imprimir e distribuir",
+  //     "Permitem personalização com cores, logos e nomes"
+  //     ],
+
+  //   produtos: [
+  //     { titulo: "Credencial em Papel 220g", imagem: "/images/paper/paper1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+  //     { titulo: "Uma Pilha de Credencial em Papel 220g", imagem: "/images/paper/paper3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+  //     { titulo: "Uma Pilha de Credencial em Papel 220g", imagem: "/images/paper/paper2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+  //     { titulo: "Uma Pilha de Credencial em Papel 220g", imagem: "/images/paper/paper4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+  //   ]
+  // },
+        {
+    id: "couche",
+    cor: "#f97415ff",
+    nomeCategoria: "Credencial em Couchê",
+    descricao: "Credenciais em papel couchê de alta qualidade, ideais para eventos corporativos, feiras e workshops, com excelente impressão e acabamento profissional.",
+    beneficios: [
+      "Acabamento premium e impressão nítida",
+      "Indicadas para eventos corporativos e feiras",
+      "Resistentes e duráveis para uso durante o evento",
+      "Personalização total com logos, cores e textos"
+      ],
+
+    produtos: [
+      { titulo: "Uma Pilha de Crachás em branco", imagem: "/images/couche/couche1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/couche/couche2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/couche/couche3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/couche/couche4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+    ]
+  },
+        {
+    id: "semissintetico",
+    cor: "#f97415ff",
+    nomeCategoria: "Credencial Semissintético",
+    descricao: "Credenciais semissintéticas, resistentes e flexíveis, indicadas para eventos, conferências e uso diário em empresas, oferecendo ótima durabilidade e toque profissional.",
+    beneficios: [
+      "Resistentes à água e desgaste",
+      "Flexíveis e duráveis",
+      "Perfeitas para eventos e uso corporativo",
+      "Personalizáveis com logos e cores da empresa"
+      ],
+
+    produtos: [
+      { titulo: "Credencial de Festival com Respingos de Água", imagem: "/images/sintetico/sintetico2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial VIP Acess com Respingos de Água", imagem: "/images/sintetico/sintetico4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial de Festival com Respingos de Água", imagem: "/images/sintetico/sintetico3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Credencial Corporativo com Respingos de Água", imagem: "/images/sintetico/sintetico1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+    ]
+  },
+  
+];
+---
+
+<html lang="pt-BR">
+  <HeadBase />
+  <body>
+    <WhatsAppButton/>
+    <Header />
+    <main>
+      <Produtos 
+        tituloSecao="Credenciais Personalizadas" 
+        subtitulo="Credenciais premium, práticas e personalizáveis para shows, feiras e eventos corporativos."
+        categorias={credencialCategorias} 
+      />
+    </main>
+    <Footer />
+  </body>
+</html>

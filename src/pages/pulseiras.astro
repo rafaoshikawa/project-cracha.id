@@ -1,0 +1,87 @@
+---
+import HeadBase from '../components/HeadBase.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Produtos from '../components/Produtos.astro';
+
+import '../styles/global.css';
+import '../styles/header.css';
+import '../styles/footer.css';
+import '../styles/products.css';
+import '../styles/store.css';
+
+const pulseirasCategoria = [
+  {
+    id: "tyvek",
+    cor: "#1a1a1a",
+    nomeCategoria: "Pulseira Tyvek",
+    descricao: "Pulseiras Tyvek resistentes, leves e descartáveis, ideais para controle de acesso em eventos de grande porte, shows e festivais.",
+    beneficios: [
+      "Resistentes e duráveis para uso único",
+      "Ideais para eventos de grande público",
+      "Controle de acesso rápido e eficiente",
+      "Design simples e personalizável"
+    ],
+    produtos: [
+      { titulo: "Pulseira Tyvek Rosa", imagem: "/images/pulseiras/tyvek1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseira Tyvek Azul", imagem: "/images/pulseiras/tyvek2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseira Tyvek Colorida", imagem: "/images/pulseiras/tyvek3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseira Tyvek Colorida", imagem: "/images/pulseiras/tyvek4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" }
+    ]
+  },
+  {
+    id: "tecido-tag",
+    cor: "#1a1a1a",
+    nomeCategoria: "Pulseira de Tecido com Tag",
+    descricao: "Pulseiras de tecido duráveis com tag incorporada, ideais para festivais, shows e eventos corporativos, garantindo identificação permanente e acesso seguro.",
+    beneficios: [
+      "Alta durabilidade e conforto no pulso",
+      "Controle de acesso eficiente com tag",
+      "Perfeitas para eventos de vários dias",
+      "Design personalizável e resistente à água"
+    ],
+    produtos: [
+      { titulo: "Pulseira de Tecido com Roxa", imagem: "/images/pulseiras/tag1.png", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseira de Tecido com Rosa", imagem: "/images/pulseiras/tag3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseiras de Tecido com Tag Coloridas", imagem: "/images/pulseiras/tag2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseira de Tecido com Tag Branca", imagem: "/images/pulseiras/tag4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" }
+    ]
+  },
+  {
+    id: "tecido-sem-tag",
+    cor: "#1a1a1a",
+    nomeCategoria: "Pulseira de Tecido sem Tag",
+    descricao: "Pulseiras de tecido simples, confortáveis e reutilizáveis, ideais para identificação de participantes em eventos corporativos, festas e workshops.",
+    beneficios: [
+      "Confortáveis e reutilizáveis",
+      "Perfeitas para eventos corporativos e festas",
+      "Fáceis de colocar e remover",
+      "Design personalizável com cores e estampas"
+    ],
+    produtos: [
+      { titulo: "Pulseiras de Tecido Coloridas", imagem: "/images/pulseiras/notag1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseira de Tecido Amarela e Preta", imagem: "/images/pulseiras/notag5.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseira de Tecido Coloridas", imagem: "/images/pulseiras/notag2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Pulseira de Tecido Coloridas", imagem: "/images/pulseiras/notag4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" }
+    ]
+  }
+];
+
+---
+
+<html lang="pt-BR">
+  <HeadBase />
+  <body>
+    <WhatsAppButton/>
+    <Header />
+    <main>
+      <Produtos 
+        tituloSecao="Pulseiras Personalizadas" 
+        subtitulo="Pulseiras práticas, duráveis e personalizáveis, ideais para identificação e controle de acesso em eventos de todos os tipos."
+        categorias={pulseirasCategoria} 
+      />
+    </main>
+    <Footer />
+  </body>
+</html>

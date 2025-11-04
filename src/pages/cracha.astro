@@ -1,6 +1,5 @@
 ---
 import HeadBase from '../components/HeadBase.astro';
-
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
@@ -11,16 +10,99 @@ import '../styles/header.css';
 import '../styles/footer.css';
 import '../styles/products.css';
 import '../styles/store.css';
----
-<html lang="pt-BR">
-      <HeadBase />
 
+const crachaCategorias = [
+  {
+    id: "identificacao",
+    cor: "#1a1a1a",
+    nomeCategoria: "Crachá para Identificação",
+    descricao: "Use esses crachás para eventos corporativos, feiras, workshops e conferências...",
+    beneficios: [
+      "Eventos corporativos e conferências",
+      "Feiras e workshops profissionais",
+      "Festivais e eventos sociais",
+      "Identificação em empresas e escolas"
+    ],
+    produtos: [
+      { titulo: "Crachá Azul", imagem: "/images/identificacao/iden7.png", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Crachá Vermelho", imagem: "/images/identificacao/iden6.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Crachá Verde", imagem: "/images/identificacao/iden5.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Crachá Laranja", imagem: "/images/identificacao/iden-1.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" }
+    ]
+  },
+  {
+    id: "virgem",
+    cor: "#1a1a1a",
+    nomeCategoria: "Crachá em Branco",
+    descricao: "Crachás em branco, totalmente personalizáveis com nome, cargo, logo ou cores da sua empresa. Perfeitos para eventos, feiras e uso corporativo.",
+    beneficios: [
+      "Eventos corporativos e conferências",
+      "Feiras e workshops profissionais",
+      "Festivais e eventos sociais",
+      "Identificação em empresas e escolas"
+    ],
+    produtos: [
+      { titulo: "Uma Pilha de Crachás em branco", imagem: "/images/cracha-branco/branco.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco Pendurado por um Cordão", imagem: "/images/cracha-branco/pvc3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/cracha-branco/pvc2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco Pendurado por um Cordão", imagem: "/images/cracha-branco/pvc4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+    ]
+  },
+    {
+    id: "tecnologia",
+    cor: "#1a1a1a",
+    nomeCategoria: "Crachá com Tecnologia Rfid",
+    descricao: "Crachás com tecnologia RFID, duráveis e modernos, que permitem controle de acesso seguro e identificação automática em eventos e empresas.",
+    beneficios: [
+      "Controle de acesso rápido e eficiente",
+      "Redução de filas e burocracia",
+      "Monitoramento de presença em tempo real",
+      "Design profissional e personalizável"
+    ],
+    produtos: [
+      { titulo: "Cartões em PVC com Rfid", imagem: "/images/rfid/rfid1.png", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Imagem meramente Ilustrativa Rfid", imagem: "/images/rfid/rfid2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Crachás com Rfid em Leque", imagem: "/images/rfid/rfid4.png", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/rfid/rfid3.png", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+    ]
+  },
+      {
+    id: "comanda",
+    cor: "#1a1a1a",
+    nomeCategoria: "Comandas em PVC",
+    descricao: "Comandas em PVC resistentes e duráveis, ideais para organizar pedidos em restaurantes, bares e eventos. Práticas, personalizáveis e fáceis de higienizar.",
+    beneficios: [
+      "Organização eficiente de pedidos",
+      "Material resistente e durável",
+      "Fácil de limpar e reutilizar",
+      "Design personalizável para sua marca"
+      ],
+
+    produtos: [
+      { titulo: "Uma Pilha de Crachás em branco", imagem: "/images/comanda/comanda1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/comanda/comanda2.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/comanda/comanda3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+      { titulo: "Um Crachá em Branco na Horizonatl", imagem: "/images/comanda/comanda4.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Ol%C3%A1,%20Gostaria%20de%20fazer%20um%20Or%C3%A7amento!" },
+
+    ]
+  },
+  
+];
+---
+
+<html lang="pt-BR">
+  <HeadBase />
   <body>
     <WhatsAppButton/>
-
     <Header />
     <main>
-      <Produtos />
+      <Produtos 
+        tituloSecao="Crachás Personalizados" 
+        subtitulo="Crachás modernos, resistentes e personalizáveis para empresas e eventos." 
+        categorias={crachaCategorias} 
+      />
     </main>
     <Footer />
   </body>

@@ -3,7 +3,7 @@ azul
 #1173d4ff;
 
 laranja
-rgba(249, 116, 21, 1);
+#f97415ff;
 
 roxo
 #7b68ee

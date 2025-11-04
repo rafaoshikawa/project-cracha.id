@@ -1,0 +1,48 @@
+.hero {
+  padding-top: 80px;
+  position: relative;
+}
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* ocupa toda a largura do hero */
+  height: 100%; /* ocupa toda a altura do hero */
+  z-index: -9;
+  opacity: 0.05;
+  object-fit: cover; /* cobre o container mantendo proporção */
+}
+.blue {
+  color: #1173d4;
+}
+
+.container-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-hero h1 {
+  color: #282c34;
+  font-size: 3.5rem;
+  max-width: 30ch;
+  text-align: center;
+  padding-top: 80px;
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+  .container-hero h1 {
+    font-size: 2.5rem; /* reduz tamanho da fonte */
+  }
+}
+
+.container-btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}

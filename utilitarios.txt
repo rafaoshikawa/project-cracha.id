@@ -1,0 +1,27 @@
+
+azul
+#1173d4ff;
+
+laranja
+rgba(249, 116, 21, 1);
+
+roxo
+#7b68ee
+
+verde
+#38d9a9
+
+preto
+#212529
+
+gold
+#ffd43b
+
+rosa
+#FF48D0
+
+vermelho
+#ff004c
+
+verde zap
+#21c063ff

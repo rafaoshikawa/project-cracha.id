@@ -1,3 +1,7 @@
+.blue {
+  color: #1173d4ff;
+}
+
 .footer-1 {
   display: block;
   justify-content: center;
@@ -88,7 +92,7 @@ footer + section {
   }
 
   .container-footer-1 h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     max-width: max-content;
   }
 

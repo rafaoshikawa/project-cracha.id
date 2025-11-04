@@ -5,6 +5,82 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===============================
+   SECTION QUALIDADE + PRAZO
+=============================== */
+.qualidade-section {
+  background: linear-gradient(135deg, #1173d4 0%, #0b5bb0 100%);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  width: 100%;
+}
+
+.qualidade-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.qualidade-container-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: nowrap; /* ❌ impede quebra de linha */
+}
+
+.qualidade-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap; /* ❌ impede quebra entre texto e ícones */
+  white-space: nowrap; /* ❌ texto e ícones ficam sempre na mesma linha */
+}
+
+.qualidade-title span {
+  display: inline-block;
+}
+
+.qualidade-title .icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transform: translateY(3px);
+  flex-shrink: 0; /* ❌ impede a imagem de encolher demais */
+}
+
+.qualidade-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 1.8rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-weight: 100;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .qualidade-title {
+    font-size: 1.2rem;
+    gap: 0.6rem;
+  }
+
+  .qualidade-title .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .qualidade-desc {
+    font-size: 0.85rem;
+  }
+}
 
 * {
   margin: 0;

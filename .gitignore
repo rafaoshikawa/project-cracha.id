@@ -1,23 +1,45 @@
+# =====================
+# Astro / Build
+# =====================
+.astro/            # cache do Astro
+dist/              # build de produção
+public/build/      # arquivos gerados pelo bundler
 
-# generated types
-.astro/
-
-# dependencies
+# =====================
+# Node / Dependencies
+# =====================
 node_modules/
 
-# logs
+# =====================
+# Logs
+# =====================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
-# environment variables
+# =====================
+# Environment Variables
+# =====================
 .env
-.env.production
+.env.*
+!.env.example      # se você tiver um arquivo de exemplo que deve ir pro repo
 
-# macOS-specific files
+# =====================
+# OS-specific files
+# =====================
 .DS_Store
+Thumbs.db
 
-# jetbrains setting folder
+# =====================
+# IDE / Editor
+# =====================
 .idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# =====================
+# Optional / Cache
+# =====================
+.cache/

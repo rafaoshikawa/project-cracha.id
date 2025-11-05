@@ -1,50 +1,13 @@
 ---
 const { titulo, descricao, imagem, linkCTA } = Astro.props;
-
-const altTexto = `${titulo} personalizada para eventos — ${descricao?.slice(0, 80) ?? ""}`.trim();
-
-// Schema.org JSON-LD
-const schemaData = {
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": titulo,
-  "image": imagem,
-  "description": descricao,
-  "brand": {
-    "@type": "Brand",
-    "name": "Crachá.ID"
-  },
-  "category": "Produtos Personalizados para Eventos",
-  "offers": {
-    "@type": "Offer",
-    "price": "Sob orçamento",
-    "priceCurrency": "BRL",
-    "availability": "https://schema.org/InStock",
-    "url": linkCTA
-  }
-};
-
 import "../styles/produtoCard.css";
 ---
 
-<div class="card2" itemscope itemtype="https://schema.org/Product">
+<div class="card2">
   <div class="card-image">
-    <img 
-      src={imagem} 
-      alt={altTexto}
-      loading="lazy"
-      decoding="async"
-      itemprop="image"
-    />
+    <img src={imagem} alt={titulo} />
   </div>
-
   <div class="card-info">
-    <span itemprop="name" class="visually-hidden">{titulo}</span>
-    <a href={linkCTA} class="btn-card" itemprop="url">Pedir Orçamento</a>
+    <a href={linkCTA} class="btn-card">Pedir Orçamento</a>
   </div>
 </div>
-
-<!-- JSON-LD Schema.org -->
-<script type="application/ld+json">
-  {JSON.stringify(schemaData)}
-</script>

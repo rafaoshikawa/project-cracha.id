@@ -1,0 +1,109 @@
+---
+import HeadBase from '../components/HeadBase.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Produtos from '../components/Produtos.astro';
+
+import '../styles/global.css';
+import '../styles/header.css';
+import '../styles/footer.css';
+import '../styles/products.css';
+import '../styles/store.css';
+
+const cordoesCategorias = [
+  {
+    id: "para-cracha",
+    cor: "#ff004c",
+    nomeCategoria: "Cordões para Crachá",
+    descricao: "Cordões personalizados para identificação em ambientes corporativos, eventos, escolas, feiras e equipes. Confortáveis para uso diário e com grande área de exposição da marca.",
+    beneficios: [
+      "Ideal para crachás e cartões de acesso",
+      "Disponível com clip, mosquetão ou presilha jacaré",
+      "Personalização com cores, estampas e logotipo",
+      "Confortável para uso contínuo"
+    ],
+    produtos: [
+      { titulo: "Cordão para Crachá Personalizado", imagem: "/images/cordoes/cordao1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para crachá!" },
+      { titulo: "Cordões Coloridos com Mosquetão", imagem: "/images/cordoes/cordao2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para crachá!" },
+      { titulo: "Cordão Estampado com Logo", imagem: "/images/cordoes/cordao.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para crachá!" },
+      { titulo: "Cordões Corporativos Premium", imagem: "/images/cordoes/cordao4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para crachá!" }
+    ]
+  },
+
+  {
+    id: "para-medalha",
+    cor: "#ff004c",
+    nomeCategoria: "Cordões para Medalha",
+    descricao: "Cordões reforçados e confortáveis, perfeitos para medalhas de premiações esportivas, festivais, olimpíadas escolares e eventos de reconhecimento.",
+    beneficios: [
+      "Alta resistência para suportar medalhas pesadas",
+      "Disponível em diferentes larguras e acabamentos",
+      "Pode ser liso ou totalmente personalizado",
+      "Ideal para premiações esportivas e institucionais"
+    ],
+    produtos: [
+      { titulo: "Cordão para Medalha Tradicional", imagem: "/images/cordoes/medalha1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para medalhas!" },
+      { titulo: "Cordão Personalizado para Premiação", imagem: "/images/cordoes/medalha2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para medalhas!" },
+      { titulo: "Cordões Esportivos Coloridos", imagem: "/images/cordoes/medalha3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para medalhas!" },
+      { titulo: "Cordões para Medalha com Largura Especial", imagem: "/images/cordoes/medalha4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para medalhas!" }
+    ]
+  },
+
+  {
+    id: "para-chaveiro",
+    cor: "#ff004c",
+    nomeCategoria: "Cordões para Chaveiro",
+    descricao: "Cordões compactos e práticos, ideais para carregar chaves, cartões de acesso, pendrives ou pequenos objetos com segurança.",
+    beneficios: [
+      "Perfeito para uso diário",
+      "Pode ser personalizado com logo ou frase",
+      "Durável e seguro",
+      "Excelente como brinde corporativo"
+    ],
+    produtos: [
+      { titulo: "Cordão para Chaveiro Simples", imagem: "/images/cordoes/chaveiro1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para chaveiro!" },
+      { titulo: "Cordão com Mosquetão Personalizado", imagem: "/images/cordoes/chaveiro2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para chaveiro!" },
+      { titulo: "Cordões Pequenos para Chaves e Cartões", imagem: "/images/cordoes/chaveiro3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para chaveiro!" },
+      { titulo: "Cordões Estampados para Brindes", imagem: "/images/cordoes/chaveiro4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões para chaveiro!" }
+    ]
+  },
+
+  {
+    id: "liso",
+    cor: "#ff004c",
+    nomeCategoria: "Cordão Liso",
+    descricao: "Cordões lisos sem personalização — opção prática, rápida e econômica para uso em eventos, credenciais e crachás gerais.",
+    beneficios: [
+      "Excelente custo-benefício",
+      "Pronto para uso imediado",
+      "Disponível em diversas cores",
+      "Ideal para escolas, feiras e eventos simples"
+    ],
+    produtos: [
+      { titulo: "Cordões Lisos Variados", imagem: "/images/cordoes/cordaoliso.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões lisos!" },
+      { titulo: "Cordão Liso com Presilha", imagem: "/images/cordoes/cordaoliso2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões lisos!" },
+      { titulo: "Cordão Liso Simples para Crachá", imagem: "/images/cordoes/cordaoliso3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões lisos!" },
+      { titulo: "Cordões Lisos em Cores Sólidas", imagem: "/images/cordoes/cordaoliso1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá, gostaria de orçamento de cordões lisos!" }
+    ]
+  }
+];
+
+
+---
+
+<html lang="pt-BR">
+  <HeadBase />
+  <body>
+    <WhatsAppButton/>
+    <Header />
+    <main>
+        <Produtos 
+        tituloSecao="Cordões Personalizados" 
+        subtitulo="Cordões resistentes, confortáveis e personalizados para crachás, chaveiros e medalhas." 
+        categorias={cordoesCategorias} 
+        />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -3,6 +3,9 @@ body {
   background: #fff; /* fundo sólido para glassmorphism */
 }
 
+.btn-4{
+  display: none;
+}
 /* Header / Navbar */
 .header {
   position: fixed;
@@ -133,6 +136,7 @@ body {
   cursor: pointer;
 }
 
+
 @media (max-width: 1100px) {
   .header {
     display: grid;
@@ -149,6 +153,9 @@ body {
     justify-content: right; /* alinha à direita */
   }
   #menu-icon {
+    display: block;
+  }
+  .btn-4{
     display: block;
   }
 

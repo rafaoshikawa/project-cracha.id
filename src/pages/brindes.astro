@@ -1,0 +1,106 @@
+---
+import HeadBase from '../components/HeadBase.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Produtos from '../components/Produtos.astro';
+
+import '../styles/global.css';
+import '../styles/header.css';
+import '../styles/footer.css';
+import '../styles/products.css';
+import '../styles/store.css';
+
+const brindesCategorias = [
+  {
+    id: "canecas",
+    cor: "#94d82d",
+    nomeCategoria: "Canecas Personalizadas",
+    descricao: "Canecas exclusivas com impressão de alta qualidade, perfeitas para brindes corporativos, eventos e ações promocionais.",
+    beneficios: [
+      "Ideais para empresas, eventos e presentes",
+      "Grande área de impressão para logos e artes",
+      "Duráveis e de excelente acabamento",
+      "Opção de personalização individual"
+    ],
+    produtos: [
+      { titulo: "Caneca Branca Personalizada", imagem: "/images/brindes/caneca1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Canecas%20Personalizadas!" },
+      { titulo: "Caneca com Estampa Colorida", imagem: "/images/brindes/caneca2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Canecas%20Personalizadas!" },
+      { titulo: "Caneca de Cerâmica", imagem: "/images/brindes/caneca3.png", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Canecas%20Personalizadas!" },
+      { titulo: "Caneca Corporativa", imagem: "/images/brindes/caneca4.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Canecas%20Personalizadas!" },
+    ]
+  },
+  {
+    id: "mousepad",
+    cor: "#94d82d",
+    nomeCategoria: "Mouse Pads Personalizados",
+    descricao: "Mouse pads personalizados com impressão nítida e base antiderrapante. Ideais para empresas, escritórios e brindes promocionais.",
+    beneficios: [
+      "Confortáveis para uso diário",
+      "Base antiderrapante",
+      "Estampa de alta definição",
+      "Ótimo para campanhas promocionais"
+    ],
+    produtos: [
+      { titulo: "Mouse Pad Retangular", imagem: "/images/brindes/mousepad1.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Mouse%20Pads!" },
+      { titulo: "Mouse Pad Colorido", imagem: "/images/brindes/mousepad2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Mouse%20Pads!" },
+      { titulo: "Mouse Pad Corporativo", imagem: "/images/brindes/mousepad3.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Mouse%20Pads!" },
+      { titulo: "Mouse Pad com Logo", imagem: "/images/brindes/mousepad4.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Mouse%20Pads!" },
+    ]
+  },
+  {
+    id: "canetas",
+    cor: "#94d82d",
+    nomeCategoria: "Canetas Personalizadas",
+    descricao: "Canetas personalizadas com sua marca, perfeitas para eventos, brindes corporativos e divulgação profissional.",
+    beneficios: [
+      "Excelente custo-benefício",
+      "Úteis no dia a dia",
+      "Ideais para ações promocionais",
+      "Diversos modelos e estilos"
+    ],
+    produtos: [
+      { titulo: "Caneta Corporativa", imagem: "/images/brindes/caneta1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Canetas!" },
+      { titulo: "Caneta com Logo", imagem: "/images/brindes/caneta2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Canetas!" },
+      { titulo: "Caneta Plástica", imagem: "/images/brindes/caneta3.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Canetas!" },
+      { titulo: "Caneta Premium", imagem: "/images/brindes/caneta4.png", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Canetas!" },
+    ]
+  },
+  {
+    id: "copos",
+    cor: "#94d82d",
+    nomeCategoria: "Copos Personalizados",
+    descricao: "Copos personalizados perfeitos para festas, eventos, brindes e ativações de marca, disponíveis em diversos modelos e cores.",
+    beneficios: [
+      "Excelente item para lembranças de eventos",
+      "Personalização com logo ou arte",
+      "Duráveis e reutilizáveis",
+      "Indicado para shows, festas e formaturas"
+    ],
+    produtos: [
+      { titulo: "Copo Long Drink", imagem: "/images/brindes/copo1.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Copos%20Personalizados!" },
+      { titulo: "Copo Neon", imagem: "/images/brindes/copo2.jpg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Copos%20Personalizados!" },
+      { titulo: "Copo com Estampa", imagem: "/images/brindes/copo3.jpeg", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Copos%20Personalizados!" },
+      { titulo: "Copos para Evento", imagem: "/images/brindes/copo4.png", linkCTA: "https://whatsa.me/5511963352624/?t=Olá,%20quero%20orçar%20Copos%20Personalizados!" },
+    ]
+  }
+];
+
+---
+
+<html lang="pt-BR">
+  <HeadBase />
+  <body>
+    <WhatsAppButton/>
+    <Header />
+    <main>
+     <Produtos 
+        tituloSecao="Brindes Personalizados" 
+        subtitulo="Brindes criativos e personalizados para destacar sua marca em eventos e no dia a dia." 
+        categorias={brindesCategorias} 
+        />
+
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -15,7 +15,7 @@ preto
 #212529
 
 gold
-#ffd43b
+#fdb924
 
 rosa
 #FF48D0
@@ -25,3 +25,6 @@ vermelho
 
 verde zap
 #21c063ff
+
+verde
+#94d82d;

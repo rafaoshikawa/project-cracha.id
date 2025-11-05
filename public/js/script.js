@@ -1,5 +1,5 @@
 // =====================
-// MENU MOBILE
+// MENU MOBILE + DROPDOWNS
 // =====================
 function initializeMenu() {
   const menuIcon = document.querySelector("#menu-icon");
@@ -13,9 +13,12 @@ function initializeMenu() {
   // === Alternar abertura/fechamento ===
   menuIcon.addEventListener("click", (e) => {
     e.stopPropagation();
-    const active = navbar.classList.toggle("active");
-    menuIcon.classList.toggle("bx-x", active);
-    navBg?.classList.toggle("active", active);
+    const opened = navbar.classList.toggle("active");
+    menuIcon.classList.toggle("bx-x", opened);
+    navBg?.classList.toggle("active", opened);
+
+    // Bloqueia scroll da página quando menu aberto
+    document.body.classList.toggle("no-scroll", opened);
   });
 
   // === Fechar ao clicar em um link ===
@@ -28,7 +31,7 @@ function initializeMenu() {
     });
   });
 
-  // === Dropdowns no mobile (só 1 aberto) ===
+  // === Dropdowns mobile (sanfona) ===
   dropdowns.forEach((dropdown) => {
     const trigger = dropdown.querySelector("a");
     if (!trigger) return;
@@ -38,6 +41,7 @@ function initializeMenu() {
         e.preventDefault();
         e.stopPropagation();
 
+        // Fecha os outros dropdowns
         dropdowns.forEach((d) => {
           if (d !== dropdown) d.classList.remove("active");
         });
@@ -59,12 +63,15 @@ function initializeMenu() {
     if (window.innerWidth > 768) closeMobileMenu();
   });
 
-  // === Função: fechar menu com suavidade ===
+  // === Função de fechamento ===
   function closeMobileMenu() {
     navbar.classList.remove("active");
     menuIcon.classList.remove("bx-x");
     dropdowns.forEach((d) => d.classList.remove("active"));
     navBg?.classList.remove("active");
+
+    // Remove bloqueio de scroll
+    document.body.classList.remove("no-scroll");
   }
 }
 
@@ -104,7 +111,7 @@ function initializeSmoothScroll() {
         behavior: "smooth",
       });
 
-      // === Pequeno respiro visual ===
+      // Ajuste visual: respiro
       setTimeout(() => {
         target.style.transition = "padding-top 0.4s ease";
         target.style.paddingTop = "80px";

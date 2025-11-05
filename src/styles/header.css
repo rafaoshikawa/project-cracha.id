@@ -1,11 +1,13 @@
 body {
   min-height: 100vh;
-  background: #fff; /* fundo sólido para glassmorphism */
+  background: #fff;
 }
 
-.btn-4{
-  display: none;
+/* Quando o menu mobile abre, bloqueia scroll da página */
+body.no-scroll {
+  overflow: hidden;
 }
+
 /* Header / Navbar */
 .header {
   position: fixed;
@@ -18,10 +20,8 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  /* efeito vidro com compatibilidade total */
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* necessário no Safari */
-
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   z-index: 100;
 }
@@ -30,27 +30,21 @@ body {
   transition: 0.3s ease;
 }
 .header-title:hover {
-  cursor: pointer;
   transform: scale(1.08);
+  cursor: pointer;
 }
 
 .logo {
   display: flex;
-  justify-content: center;
   align-items: center;
   color: #1173d4;
   font-size: 1.5rem;
-  text-decoration: none;
   font-weight: 600;
-  cursor: default;
-  cursor: pointer;
-
-  
+  text-decoration: none;
 }
 
 .logo img {
   width: 50px;
-
 }
 
 .navbar {
@@ -66,33 +60,30 @@ body {
   transition: 0.3s;
 }
 
-/* Botão verde */
+/* Botão */
 .btn-orcamento {
   background: #1173d4;
   padding: 8px 20px;
   border-radius: 20px;
   margin-left: 35px;
   font-weight: 500;
-  transition: 0.3s ease; /* suaviza transformação */
-  display: inline-block; /* garante que scale funcione corretamente */
+  transition: 0.3s ease;
 }
 
 .btn-orcamento:hover {
   background: #0783ff;
-  transform: scale(1.1); /* aumenta 10% */
+  transform: scale(1.1);
 }
 
-/* Se você tiver links dentro do botão */
 .btn-orcamento a {
   color: #fff;
-  transition: 0.3s ease;
 }
 
-.btn-orcamento a:hover {
-  color: #fff; /* mantém a cor branca ao passar o mouse */
+.btn-4 {
+  display: none;
 }
 
-/* Dropdown desktop */
+/* Dropdown Desktop */
 .dropdown {
   position: relative;
 }
@@ -102,10 +93,8 @@ body {
   top: 100%;
   left: 0;
   background-color: #e9e7e7;
-
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   display: none;
   min-width: 220px;
   flex-direction: column;
@@ -113,22 +102,14 @@ body {
 }
 
 .dropdown-menu a {
-  display: block;
   padding: 10px 15px;
-  margin: 0;
-  color: #111;
-  text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-  color: rgb(0, 145, 255);
 }
 
 .dropdown:hover .dropdown-menu {
   display: flex;
 }
 
-/* Mobile */
+/* Icone mobile */
 #menu-icon {
   font-size: 36px;
   color: #111;
@@ -136,75 +117,69 @@ body {
   cursor: pointer;
 }
 
-
+/* MOBILE */
 @media (max-width: 1100px) {
-  .header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center; /* opcional, alinha verticalmente */
-    padding: 10px 10px;
-  }
-
-  .header > :first-child {
-    justify-self: start; /* alinha à esquerda */
-  }
-
-  .header > :last-child {
-    justify-content: right; /* alinha à direita */
-  }
+  /* Ícone do menu sempre colado à direita */
   #menu-icon {
     display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px; /* distância da borda direita */
+    transform: translateY(-50%);
+    font-size: 36px;
+    color: #111;
+    cursor: pointer;
+    z-index: 150; /* acima do menu */
   }
-  .btn-4{
+
+  .btn-4 {
     display: block;
   }
 
-  .menu-icon {
-    text-align: right;
-  }
   .navbar {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    display: none;
+
+    /* animação de deslizar de cima */
+    max-height: 0;
+    overflow-y: auto;
+    transition: max-height 0.35s ease;
+
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: #e9e7e7;
+    backdrop-filter: blur(14px);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.12);
     z-index: 99;
-    padding: 1rem 0;
   }
 
+  /* Quando o menu abre */
   .navbar.active {
-    display: flex;
-    background-color: #e9e7e7;
+    max-height: 85vh; /* faz rolar apenas o menu */
   }
 
   .navbar a,
   .btn-orcamento {
     display: block;
-    margin: 0.5rem 0;
-    padding: 0.5rem 1.5rem;
+    margin: 8px 0;
+    padding: 10px 1.5rem;
   }
 
-  /* Dropdown mobile (sanfona) */
+  /* Dropdown Mobile Sanfona */
   .dropdown-menu {
     position: relative;
     display: none;
-    border: none;
     background: none;
     padding-left: 1rem;
-    background-color: #e9e7e7;
   }
 
   .dropdown.active .dropdown-menu {
     display: flex;
     flex-direction: column;
-    background-color: #e9e7e7;
+    background: none;
   }
 
-  /* Ícone de seta rotaciona ao abrir */
   .dropdown.active > a i {
     transform: rotate(180deg);
     transition: 0.3s;

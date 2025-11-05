@@ -417,3 +417,48 @@ li {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
 }
+
+
+/* Animação de entrada da página */
+body {
+  animation: pageFadeIn 0.6s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Opcional: animação separada para header, main e footer */
+.header, main, footer {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.header {
+  animation-delay: 0.1s;
+}
+main {
+  animation-delay: 0.2s;
+}
+footer {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
